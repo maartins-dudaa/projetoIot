@@ -1,10 +1,10 @@
 <div class="container mt-5">
     <div class="d-flex justify-content-between align-items-center mb-4">
         <div class="col-8">
-            <h2 class="fw-bold text-danger mb-1">Ambientes</h2>
+            <h2 class="fw-bold text-info mb-1; text-center">Ambientes</h2>
         </div>
-        <a class="btn btn-danger btn-lg" href="{{ route('ambiente.create') }}">
-            Novo Ambiente
+        <a class="btn btn-info btn-sm" href="{{ route('ambiente.create') }}">
+            Cadastrar Novo Ambiente
         </a>
     </div>
     <div class="card-body p-0">
@@ -18,16 +18,14 @@
                 </tr>
             </thead>
             <tbody>
-                {{-- ele vai colocar os dados do funcionarios e coloca na variavel f, ele vai 'popular  nossa tabela' --}}
-                @foreach ($ambiente as $a)
+                @foreach ($ambientes as $a)
                     <tr>
                         <td>{{ $a->nome }}</td>
                         <td>{{ $a->descricao }}</td>
                         <td>{{ $a->status }}</td>
                         <td>
-                            <a href="{{ route('ambiente.edit', $a->id) }}"
-                                class="btn btn-warning me-1" data-bs-toggle="tooltip" title="Editar">Editar
-                            </a>
+                        
+                            <a class="btn btn-info" href="" role="button">Editar</a>
                         </td>
                     </tr>
                 @endforeach

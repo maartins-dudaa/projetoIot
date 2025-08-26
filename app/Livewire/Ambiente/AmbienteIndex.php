@@ -9,10 +9,8 @@ class AmbienteIndex extends Component
 {
     public function render()
     {
-        return view('livewire.ambiente.ambiente-index');
-
         $ambientes = Ambiente::all();
 
-        return view('livewire.ambiente.index', compact('ambientes'));
+        return view('livewire.ambiente.ambiente-index', compact('ambientes'));
     }
 }
