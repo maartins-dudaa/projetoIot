@@ -2,12 +2,17 @@
 
 namespace App\Livewire\Sensor;
 
+use App\Models\Ambiente;
+use App\Models\Sensor;
 use Livewire\Component;
 
 class SensorIndex extends Component
 {
     public function render()
+
     {
-        return view('livewire.sensor.sensor-index');
+        
+        $sensors = Sensor::all();
+        return view('livewire.sensor.sensor-index', compact('sensors'));
     }
 }
