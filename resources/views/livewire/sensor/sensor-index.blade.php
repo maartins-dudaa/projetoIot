@@ -1,4 +1,18 @@
 <div class="container mt-5">
+    <div class="card">
+        <div class="card-body">
+            
+            <div class="col-md-6 d-flex">
+                <select wire:model="perPage" class="form-select me-2" style="width: 150px">
+                  
+                    <option value="25">15 por página</option>
+                    
+                  
+                </select>
+
+              
+        
+            </div>
     <div class="d-flex justify-content-between align-items-center mb-4">
         <div class="col-8">
             <h2 class="fw-bold text-info mb-1; text-center">Sensores</h2>

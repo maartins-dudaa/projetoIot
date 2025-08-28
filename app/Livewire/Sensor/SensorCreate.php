@@ -5,6 +5,8 @@ namespace App\Livewire\Sensor;
 use App\Models\Ambiente;
 use App\Models\Sensor;
 use Livewire\Component;
+use Livewire\WithoutUrlPagination;
+use Livewire\WithPagination;
 
 class SensorCreate extends Component
 {
@@ -13,6 +15,18 @@ class SensorCreate extends Component
     public $tipo;
     public $descricao;
     public $status;
+
+
+
+   use WithPagination;
+     public $perPage = 15;
+     
+
+      protected $queryString = [
+        
+        'perPage' => ['except' => '15']
+       
+    ];
 
 
         protected $rules = [
