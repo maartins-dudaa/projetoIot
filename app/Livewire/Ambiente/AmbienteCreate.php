@@ -22,7 +22,7 @@ class AmbienteCreate extends Component
            'status'=>$this->status
         ]);
 
-        session()->flash('message', 'Cadastro realizado');
+     return redirect()->route('ambiente.index');
     }
 
 }

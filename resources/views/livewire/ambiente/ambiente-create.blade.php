@@ -36,7 +36,7 @@
                                         </select>
                                         
                                     </div>
-                        <input class="btn btn-info mt-2" type="submit" value="Submit">
+                        <input class="btn btn-info mt-2" type="submit" value="Cadastrar">
                     </form>
                 </div>
             </div>
