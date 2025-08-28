@@ -31,8 +31,8 @@
                                         <select class="form-select" id="status" name="status"
                                             wire:model.defer="status">
                                             <option hidden>Selecione</option>
-                                            <option value="0">Ativo</option>
-                                            <option value="1">Inativo</option>
+                                            <option value="1">Ativo</option>
+                                            <option value="0">Inativo</option>
                                         </select>
                                         
                                     </div>
