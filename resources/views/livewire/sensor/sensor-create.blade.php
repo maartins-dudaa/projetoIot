@@ -20,26 +20,35 @@
                                 <label for="codigo" class="form-label">Codigo</label>
                                 <input type="text" class="form-control" id="codigp" wire:model.defer="codigo"
                                     placeholder="EX:.X1...">
+                                     @error('codigo')
+                                            <small class="text-danger">{{ $message }}</small>
+                                        @enderror
                             </div>
                             <div class="mb-3">
                                 <label for="tipo" class="form-label">Tipo</label>
                                 <input type="text" class="form-control" id="tipo" wire:model.defer="tipo"
                                     placeholder="EX:.infravermelho...">
+                                     @error('tipo')
+                                            <small class="text-danger">{{ $message }}</small>
+                                        @enderror
                             </div>
 
                             <div class="mb-3">
                                 <label for="descricao" class="form-label">Descrição</label>
                                 <input type="text" class="form-control" id="descricao" wire:model.defer="descricao"
                                     placeholder="digite aqui...">
+                                   
                             </div>
 
                             <div class=mb-3>
                                 <label for="ambiente_id" class="form-label fw-semibold">Ambiente</label>
                                 <select class="form-select" id="ambiente_id" name="ambiente_id"
                                     wire:model.defer="ambiente_id">
+                                    
                                     @foreach ($ambientes as $ambiente)
                                         <option value="{{$ambiente->id }}" > {{ $ambiente->nome }}</option>
                                     @endforeach
+                                    
                                 </select>
 
                             </div>
@@ -52,6 +61,9 @@
                                             <option value="0">Inativo</option>
                                             <option value="1">Ativo</option>
                                         </select>
+                                          @error('status')
+                                            <small class="text-danger">{{ $message }}</small>
+                                        @enderror
                                         
                                     </div>
 

@@ -14,7 +14,22 @@ class SensorCreate extends Component
     public $descricao;
     public $status;
 
+
+        protected $rules = [
+            'codigo' => 'unique:sensors',
+            'tipo' => 'required',
+            'status' => 'required',
+    ];
+
+     protected $messages = [
+        'codigo.unique' => 'Esse código já está cadastrado',
+        'tipo.required' => 'Esse campo é obrigatório',
+        'status' => 'esse campo é obrigatório'
+    ];
+
     public function store(){
+          $this->validate();
+
         Sensor::create([
             'codigo'=>$this->codigo,
             'tipo' => $this->tipo,
