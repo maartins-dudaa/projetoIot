@@ -20,6 +20,9 @@
                             <label for="nome" class="form-label">Nome</label>
                             <input type="text" class="form-control" id="nome" wire:model.defer="nome"
                                 placeholder="Sala de aula...">
+                                @error('nome')
+                                            <small class="text-danger">{{ $message }}</small>
+                                        @enderror
                         </div>
                         <div class="mb-3">
                             <label for="descricao" class="form-label">Descrição</label>
@@ -30,9 +33,11 @@
                                         <label for="status" class="form-label fw-semibold">Status</label>
                                         <select class="form-select" id="status" name="status"
                                             wire:model.defer="status">
+                                             
                                             <option hidden>Selecione</option>
                                             <option value="1">Ativo</option>
                                             <option value="0">Inativo</option>
+                                          
                                         </select>
                                         
                                     </div>
