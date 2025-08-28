@@ -22,7 +22,8 @@ class SensorCreate extends Component
             'status' => $this->status,
             'ambiente_id' => $this->ambiente_id
         ]);
-         session()->flash('message', 'Cadastro realizado!');
+
+          return redirect()->route('sensor.index');
     }
 
     public function render()
