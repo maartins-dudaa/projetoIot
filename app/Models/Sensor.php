@@ -23,4 +23,6 @@ class Sensor extends Model
     public function ambiente(){
         return $this->belongsTo(Ambiente::class);
     }
+
+    
 }
