@@ -38,24 +38,18 @@
                     <th>Unidade</th>
                        <th>Data e Hora</th>
                    
-                          <th>Ações</th>
+                  
                 </tr>
             </thead>
             <tbody>
                 @foreach ($registros as $r)
                     <tr>
-                        <td>{{$r-> $sensors->id}}</td>
+                        <td>{{$r-> sensor->id}}</td>
                         <td>{{ $r->valor }}</td>
                          <td>{{ $r->unidade }}</td>
                               <td>{{ $r->data_hora }}</td>
                           
-                        <td>
-                        
-                           <a class="btn btn-info btn-sm" href="{{ route('registro.edit', $r->id) }}">
-          Editar
-        </a>
-        
-                        </td>
+                       
                     </tr>
                 @endforeach
             </tbody>
