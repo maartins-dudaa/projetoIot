@@ -18,4 +18,8 @@ class Ambiente extends Model
     public function sensores(){
         return $this->hasMany(Sensor::class);
     }
+
+    public function registros(){
+        return $this->hasMany(Registro::class);
+    }
 }
