@@ -9,22 +9,30 @@ use Livewire\WithPagination;
 class AmbienteIndex extends Component
 {
      use WithPagination;
-     public $perPage = 15;
-     
 
-      protected $queryString = [
-        
-        'perPage' => ['except' => '15']
-       
+    public $search = '';
+    public $perPage = 10;
+
+    protected $queryString = [
+        'search' => ['except' => ''],
+        'perPage' => ['except' => '10']
     ];
-    
-    public function render()
-    {
-        $ambientes = Ambiente::all();
 
-        return view('livewire.ambiente.ambiente-index', [
-            'ambientes' => Ambiente::paginate(15),
-        ], compact('ambientes') );
-        
+    public $ambienteId;
+
+    
+   public function render()
+    {
+        $ambientes = Ambiente::where('nome', 'like', "%{$this->search}%")
+            ->orWhere('descricao', 'like', "%{$this->search}%")
+            ->orWhere('status', 'like', "%{$this->search}%")
+           
+            ->paginate($this->perPage);
+
+
+        return view('livewire.ambiente.ambiente-index', compact('ambientes'));
     }
+
+
+
 }
