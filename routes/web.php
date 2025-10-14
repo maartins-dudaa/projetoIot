@@ -7,6 +7,7 @@ use App\Livewire\Sensor\SensorCreate;
 use App\Livewire\Sensor\SensorEdit;
 use App\Livewire\Sensor\SensorIndex;
 use App\Livewire\Dashboard;
+use App\Livewire\Dispositivos\DispositivoList;
 use App\Livewire\Registro\RegistroEdit;
 use App\Livewire\Registro\RegistroIndex;
 use Illuminate\Support\Facades\Route;
@@ -24,4 +25,6 @@ Route::get('/sensor/{id}/edit', SensorEdit::class)->name('sensor.edit');
 Route::get('/sensores', SensorIndex::class)->name('sensor.index');
 
 Route::get('/dashboard', Dashboard::class)->name('dashboard');
+
+Route::get('/dispositivo/list', DispositivoList::class)->name('dispositivo.list');
 
