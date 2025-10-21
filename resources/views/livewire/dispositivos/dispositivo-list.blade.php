@@ -2,7 +2,7 @@
     <div class="container">
         <div class="header">
             <h1>Dispositivos</h1>
-            <button class="add-button">Cadastrar Novo Dispositivo</button>
+            <button class="add-button" href="{{ route('sensor.create') }}">Cadastrar Novo Dispositivo</button>
         </div>
 
         <div class="table-container">

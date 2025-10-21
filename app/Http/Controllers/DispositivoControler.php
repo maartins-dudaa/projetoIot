@@ -11,16 +11,17 @@ class DispositivoControler extends Controller
     // retornar o status do sensor 
     // buscar pelo código, se existur retornar o status 
 
-    public function show(Request $request)
+    public function show($codigo)
     {
-        $sensor = Sensor::where('codigo', $request->codigo)->first(); // pega sempre o primeiro
+        $sensor = Sensor::where('codigo', $codigo)->first(); // pega sempre o primeiro
         if (!$sensor) {
-            return response()->json(['error' => 'sensor não encontrado'], 404);
-        }
-        return response()->json([
-            'success' => 'sensor encontrado',
-            'status' => $sensor->status
-        ]);
+        return response()->json(['error' => 'sensor não encontrado'], 404);
+    }
+    
+    return response()->json([
+        'success' => 'sensor encontrado',
+        'status' => $sensor->status
+    ]);
     }
 
     public function update(Request $request)
